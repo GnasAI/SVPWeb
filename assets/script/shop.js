@@ -290,7 +290,8 @@ function addcartss(productImg, productName, productPrice, selectedSize, selected
         var cont = '<div class="shoppingdetail" data-id="' + itemId + '"><div class="cart-view"><div class="left"><img src="' + productImg + '" alt=""></div><div class="right"><div class="right1"><span style="margin-left:0">' + productName + '</span><i class="fa-solid fa-xmark" style="margin-right:0"></i></div><div class="right2"><span>' + selectedSize + '</span>   <img src="' + selectedColor + '" alt="" class = "shc"> </div><div class="right3"><div class="right3-left" style="margin-left:0"><div class="update"><div class="giam"><button class="_1"><i class="fa-solid fa-minus"></i></button><div class="_2"><input type="text" name="" id="" value=1></div><button class="_3"><i class="fa-solid fa-plus"></i></button></div></div></div><div class="right3-right" style="margin-right:0"><span>' + productPrice + '</span></div></div></div></div></div>';
         addshoppingdetail.innerHTML = cont;
         cartbody.append(addshoppingdetail);
-var quantityElement = addshoppingdetail.querySelector("._2 input");
+
+        var quantityElement = addshoppingdetail.querySelector("._2 input");
         var decreaseBtn = addshoppingdetail.querySelector("button._1");
         var increaseBtn = addshoppingdetail.querySelector("button._3");
 
@@ -319,7 +320,7 @@ var quantityElement = addshoppingdetail.querySelector("._2 input");
     }
 
     function Update(quantityElement, productPrice, quantity) {
-        var quanti = parseInt(quantity); // Parse the quantity to integer
+var quanti = parseInt(quantity); // Parse the quantity to integer
         var totalprices = quantityElement.parentElement.parentElement.parentElement.parentElement.parentElement;
         var totalPriceElement = totalprices.querySelector('.right3-right span');
         var tongc = parseInt(productPrice) * quanti * 1000;
@@ -351,7 +352,9 @@ var quantityElement = addshoppingdetail.querySelector("._2 input");
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
+    location.reload();
 
+    calculateTotalPrice();
     total();
     updateTotalQuantity();
     deletaCart();

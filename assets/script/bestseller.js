@@ -318,6 +318,18 @@ function Animation(){
             }
         }
     })  
+    //click heart
+    let hearts_btn = document.querySelectorAll('.hearted')
+    hearts_btn.forEach(heart =>{
+        heart.addEventListener('click', ()=>{
+            if (heart.style.color != 'red'){
+                heart.style.color = 'red'
+            }
+            else
+            heart.style.color = 'unset'
+        })
+    
+    })
     //sort
     let product_cards_container = document.querySelector('.product-grid')
     let product_cards  = document.querySelectorAll('.product')

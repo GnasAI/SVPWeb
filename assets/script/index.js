@@ -379,7 +379,18 @@ color_btns.forEach(color => {
         })
     })
 })
+//click heart
+let hearts_btn = document.querySelectorAll('.hearted')
+hearts_btn.forEach(heart =>{
+    heart.addEventListener('click', ()=>{
+        if (heart.style.color != 'red'){
+            heart.style.color = 'red'
+        }
+        else
+        heart.style.color = 'unset'
+    })
 
+})
 
 
 const tt = document.querySelector(".bd")

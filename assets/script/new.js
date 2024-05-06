@@ -181,6 +181,18 @@ function Animation(){
             })
         })
     })
+    //click heart
+    let hearts_btn = document.querySelectorAll('.hearted')
+    hearts_btn.forEach(heart =>{
+        heart.addEventListener('click', ()=>{
+            if (heart.style.color != 'red'){
+                heart.style.color = 'red'
+            }
+            else
+            heart.style.color = 'unset'
+        })
+    
+    })
     //rename product card
     ProductGrid = document.querySelector('.product-grid')
     ProductItem = document.querySelectorAll('.product')

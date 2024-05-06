@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin đặt hàng</title>
+    <link rel="stylesheet" href="assets/style/IndexAndCart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="assets/img/index/logo.png">
+</head>
+</head>
+
+<body>
+    <div class="fathertt">
+        <div class="ttgh">
+            <div class="ttgh-head">
+                <a href="index.html"><img src="assets/img/index/logo.png" alt=""></a>
+            </div>
+            <div class="ttgh-tc">
+                <a href="Cart.html" style="margin-right: 20px;color: rgb(63, 63, 232);">Giỏ hàng</a>
+                <i class="fa-solid fa-chevron-right" style="margin-right: 20px;">
+                </i>
+                <span>Thông tin giao hàng</span>
+            </div>
+            <div class="hienthongtin">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="hienttdh">Hiển thị thông tin đơn hàng</span>
+                <span class="anttdh">Ẩn thông tin đơn hàng</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="anhttghh">
+                <div class="" id="dt">
+    
+                </div>
+                
+                <div class="tamtinh">
+                    <div class="tamtinhandgia">
+                        <span>Tạm tính</span>
+                        <span class="prices" style="background: white;padding: 0;">0</span>
+                    </div>
+                    <div class="phivanchuyen">
+                        <span>Phí vận chuyển</span>
+                        <span>-</span>
+                    </div>
+                </div>
+                <div class="tongcong">
+                    <div class="tongcongtext">Tổng cộng</div>
+                    <div class="tongconggias">
+                        <div class="vnd" style="color: gray;">
+                            VND
+                        </div>
+                        <div class="mn">
+                            0
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ttgh-dt">
+                <span style="font-size: 25px;margin-bottom: 30px;">Thông tin giao hàng</span>
+                <div class="ttgh-ht">
+                    <input type="text" placeholder="Họ và tên">
+                </div>
+                <div class="lienhe">
+                    <input type="text" class="em" placeholder="Email">
+                    <input type="text" class="sdt" placeholder="Số điện thoại">
+                </div>
+                <div class="diachi">
+                    <input type="text" placeholder="Địa chỉ">
+
+                </div>
+                <div class="thanhpho">
+                    <div class="tp">
+                        <label for="city">Tỉnh / thành</label>
+                        <select name="" id="city">
+                            <option value="" selected>Chọn Tỉnh / Thành</option>
+                            <option value="hcm">Hồ Chí Minh</option>
+                            <option value="hn">Hà Nội</option>
+                            <option value="dn">Đà Nẵng</option>
+                            <option value="ag">An Giang</option>
+                            <option value="vt">Bà Rịa - Vũng Tàu</option>
+                            <option value="bd">Bình Dương</option>
+                            <option value="bp">Bình Phước</option>
+                            <option value="bt">Bình Thuận</option>
+                            <option value="bdinh">Bình Định</option>
+                            <option value="bl">Bạc Liêu</option>
+                            <option value="bg">Bắc Giang</option>
+                            <option value="bk">Bắc Kạn</option>
+                            <option value="bn">Bắc Ninh</option>
+                            <option value="btre">Bến Tre</option>
+                            <option value="cbang">Cao Bằng</option>
+                            <option value="cmau">Cà Mau</option>
+                            <option value="ctho">Cần Thơ</option>
+                            <option value="glai">Gia Lai</option>
+                            <option value="hgiang">Hà Giang</option>
+                            <option value="hnam">Hà Nam</option>
+                            <option value="htinh">Hà Tĩnh</option>
+                            <option value="hbinh">Hòa Bình</option>
+                            <option value="hyen">Hưng Yên</option>
+                            <option value="hduong">Hải Dương</option>
+                            <option value="hphong">Hải Phòng</option>
+                            <option value="hgiang">Hậu Giang</option>
+                            <option value="khoa">Khánh Hòa</option>
+                            <option value="kgiang">Kiên Giang</option>
+                            <option value="ktum">Kon Tum</option>
+                            <option value="lchau">Lai Châu</option>
+                            <option value="lan">Long An</option>
+                            <option value="lcai">Lào Cai</option>
+                            <option value="ldong">Lâm Đồng</option>
+                            <option value="lson">Lạng Sơn</option>
+                            <option value="ndinh">Nam Định</option>
+                            <option value="nghean">Nghệ An</option>
+                            <option value="nbinh">Ninh Bình</option>
+                            <option value="nthuan">Ninh Thuận</option>
+                            <option value="ptho">Phú Thọ</option>
+                            <option value="phuyen">Phú Yên</option>
+                            <option value="quangbinh">Quảng Bình</option>
+                            <option value="quangnam">Quảng Nam</option>
+                            <option value="quangngai">Quảng Ngãi</option>
+                            <option value="quangninh">Quảng Ninh</option>
+                            <option value="quangtri">Quảng Trị</option>
+                            <option value="soctrang">Sóc Trăng</option>
+                            <option value="sonla">Sơn La</option>
+                            <option value="thanhhoa">Thanh Hóa</option>
+                            <option value="thaibinh">Thái Bình</option>
+                            <option value="thainguyen">Thái Nguyên</option>
+                            <option value="thuathienhue">Thừa Thiên Huế</option>
+                            <option value="tiengiang">Tiền Giang</option>
+                            <option value="travinh">Trà Vinh</option>
+                            <option value="tuyenquang">Tuyên Quang</option>
+                            <option value="tayninh">Tây Ninh</option>
+                            <option value="vinhlong">Vĩnh Long</option>
+                            <option value="vinhphuc">Vĩnh Phúc</option>
+                            <option value="yenbai">Yên Bái</option>
+                            <option value="dienbien">Điện Biên</option>
+                            <option value="daklak">Đắk Lắk</option>
+                            <option value="daknong">Đắk Nông</option>
+                            <option value="dongnai">Đồng Nai</option>
+                            <option value="dongthap">Đồng Tháp</option>
+
+
+
+                        </select>
+                    </div>
+                    <div class="Quan">
+                        <label for="quan">Quận / huyện</label>
+                        <select name="" id="quan">
+                            <option value="" selected>Chọn Quận / huyện</option>
+                        </select>
+
+                    </div>
+                    <div class="Xa">
+                        <label for="xa">Phường / xã</label>
+                        <select name="" id="xa">
+                            <option value="" selected>Chọn Phường / xã</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="pt-giaohang">
+                    <span style="font-size: 25px;">Phương thức vận chuyển</span>
+                    <div class="radio-input">
+                        <input type="radio" checked>
+                        <span>Giao hàng tiêu chuẩn</span>
+                    </div>
+                </div>
+                <div class="pt-thanhtoan">
+                    <span style="font-size: 25px;">Phương thức thanh toán</span>
+                    <div class="content-box">
+                        <div class="box1">
+                            <input type="radio" name="1">
+                            <div class="img">
+                                <img src="assets/img/index/thanhtoan.svg" alt="">
+                            </div>
+                            <span style="margin-left: 10px;">Thanh toán khi giao hàng(COD)</span>
+                        </div>
+                        <div class="box1">
+                            <input type="radio" name="1">
+                            <div class="shoppe">
+                                <img src="assets/img/index/shopee_pay.png" alt="">
+                            </div>
+                            <span style="margin-left: 10px;">Ví ShoppePay</span>
+                        </div>
+                        <div class="box1">
+                            <input type="radio" name="1">
+                            <div class="img">
+                                <img src="assets/img/index/bank.svg" alt="">
+                            </div>
+                            <span style="margin-left: 10px;">Chuyển khoản qua ngân hàng</span>
+                        </div>
+                        <div class="box1">
+                            <input type="radio" name="1">
+                            <div class="momo">
+                                <img src="assets/img/index/momo.svg" alt="">
+                            </div>
+                            <span style="margin-left: 10px;">Ví MoMo</span>
+                        </div>
+                        <div class="box1">
+                            <input type="radio" name="1">
+                            <div class="img">
+                                <img src="assets/img/index/zalopay.svg" alt="">
+                            </div>
+                            <span style="margin-left: 10px;">Ví Zalopay bằng QRCode</span>
+                        </div>
+                        <div class="box1">
+                            <input type="radio" name="1">
+                            <div class="img">
+                                <img src="assets/img/index/zalopay.svg" alt="">
+                            </div>
+                            <div class="atm">
+                                <span>Thẻ ATM nội địa qua cổng ZaloPay</span>
+                                <br>
+                                <img src="assets/img/index/type_atm.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="box1" style="border: none;">
+                            <input type="radio" name="1">
+                            <div class="img">
+                                <img src="assets/img/index/zalopay.svg" alt="">
+                            </div>
+                            <div class="atm">
+                                <span>Thẻ ATM nội địa qua cổng ZaloPay</span>
+                                <br>
+                                <img src="assets/img/index/visa_master_jcb.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chan">
+                    <a href="Cart.html" style="color: rgb(80, 80, 242);">Giỏ hàng</a>
+                    <button>Hoàn tất thanh toán</button>
+                </div>
+                <div class="chan2">
+                    <a href="Cart.html" style="color: rgb(80, 80, 242);">Giỏ hàng</a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="anhttgh">
+            <div class="" id="dt">
+
+            </div>
+            
+            <div class="tamtinh">
+                <div class="tamtinhandgia">
+                    <span>Tạm tính</span>
+                    <span class="prices" style="background: #fafaff;padding: 0;">0</span>
+                </div>
+                <div class="phivanchuyen">
+                    <span>Phí vận chuyển</span>
+                    <span>-</span>
+                </div>
+            </div>
+            <div class="tongcong">
+                <div class="tongcongtext">Tổng cộng</div>
+                <div class="tongconggias">
+                    <div class="vnd" style="color: gray;">
+                        VND
+                    </div>
+                    <div class="mn">
+                        0
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/script/info.js"></script>
+</body>
+
+</html>

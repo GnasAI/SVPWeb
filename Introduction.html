@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Dự Án</title>
+    <link href="http://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" >
+    <link rel="stylesheet" href="assets/style/IntroAndForm.css">
+    <link rel="stylesheet" href="assets/style/IndexAndCart.css">
+    <link rel="icon" href="assets/img/index/logo.png">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Header styles */
+.header1 h1 {
+  text-align: center;
+  font-size: 32px;
+  color: #007bff; 
+  margin: 20px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+/* Content styles */
+.content {
+  display: flex;
+  text-align: center; 
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.content p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.content-wrapper {
+  flex: 1;
+  margin-right: 10px; 
+}
+/* .content-image {
+  max-width: 50%; 
+  float: right; 
+  margin-right: 50px;
+} */
+
+.content-text {
+  margin-left: 60px;
+}
+
+.button-view-products {
+  display: inline-block;
+  padding: 20px 30px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.button-view-products:hover {
+  background-color: #0056b3;
+}
+
+/* Item styles */
+.item {
+  width: 100%;
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-width: 900px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.items-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  gap: 5px; /* Khoảng cách giữa các item */
+  align-items: center;
+  margin: 0 auto ;
+}
+
+.item.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.item:hover,
+.item.active {
+  background-color:rgb(80, 117, 208) ;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+/* .content .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #5790c9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+} */
+
+/* Student Introduction styles */
+.student-introduction {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.student-introduction h2 {
+  font-size: 25px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px; 
+}
+
+/* Profile Card styles */
+.profile-card{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 370px;
+  width: calc(33.33% - 40px);
+  background: #fff;
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin: 0 20px 20px 0;
+  vertical-align: top;
+}
+
+.profile-card::before {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  height: 36%;
+  width: 100%;
+  border-radius: 24px 24px 0 0;
+  background-color: #4070f4;
+}
+
+.image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: #4070f4;
+  padding: 3px;
+  margin-bottom: 10px;
+  margin-right: 10px; 
+}
+
+.image .profile-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+
+}
+.media-buttons {
+  flex: 1; /* Phần tử sẽ mở rộng ra để lấp đầy không gian còn trống */
+  display: flex; 
+  justify-content: center;
+}
+
+.profile-img:hover {
+  transform: scale(1.2);
+}
+
+.profile-card .text-data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+.text-data .name {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.text-data .job {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.profile-card .media-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.media-buttons .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  margin: 0 8px;
+  background-color: #4070f4;
+  text-decoration: none;
+}
+  
+/* .media-buttons .link:nth-child(2) {
+  background-color: #e1306c;
+} */
+  
+.profile-card .buttons {         
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+  
+.buttons .button {
+  background-color: #537ef4;
+  border-radius: 24px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 10px;
+  padding: 8px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+  
+.buttons .button:hover {
+  background-color: #062d9a;
+}
+  
+.profile-card .analytics {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+  
+.analytics .data {
+  display: flex;
+  align-items: center;
+  color: #333;
+  padding: 0 20px;
+  border-right: 2px solid #e7e7e7;
+}
+  
+.data:last-child {
+  border-right: none;
+}
+
+.data i {
+  font-size: 25px;
+  margin-right: 6px;
+}
+
+.foot {
+  padding: 50px 75px 0;
+  background-color: rgb(229, 226, 226);
+  margin-top: 100px;
+  width: 100%;
+}
+
+.foot-detail {
+  display: flex;
+}
+
+.foot1 {
+  width: 25%;
+}
+
+.foot2 {
+  width: 25%;
+
+}
+.foot3 {
+  width: 25%;
+}
+
+.foot4 {
+  width: 25%;
+}
+
+.foot-detail .cach {
+  margin-bottom: 20px;
+}
+
+.foot-detail ul {
+  line-height: 30px;
+}
+
+.mangxh {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.ins {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.tik {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.you {
+  margin: 0;
+  padding: 0 20px;
+}
+
+.fb {
+  margin: 0;
+  padding: 0 20px;   
+}
+
+.phone-number {
+  padding: 0 20px;
+  margin-top: 20px;
+}
+
+.bocongthuong {
+  padding: 0 10px;
+}
+
+.bocongthuong img {
+  width: 120px;
+}
+
+.letter {
+  padding: 0 20px;
+  margin-top: 20px;
+}
+
+.foot-details {
+  display: none;
+}
+
+.foot-details .foot1 {
+  margin: 0;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.foot-details .foot2 {
+  margin: 0;
+  margin-top: 20px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.foot-details .foot3 {
+  margin: 0;
+  margin-top: 20px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.foot-details .foot4 { 
+  margin: 0;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.mangxh1 {
+  display: flex; 
+}
+
+.foot-details ul {
+  display: none;
+}
+
+.foot-details ul li {
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.foot-details ul li:hover {
+  color: rgb(21, 68, 224);
+}
+
+.foot-details .foot-lienhe {
+  margin-top: 20px ;
+  padding: 0;
+}
+
+.downnn {
+  position: relative;
+}
+
+.donghanh {
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.foot-details .cach{
+  cursor: pointer;
+}
+
+.info-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.contact-info {
+margin-top: 20px;
+text-align: center;
+}
+
+.contact-info h3 {
+font-size: 1.5rem;
+color: #333;
+}
+
+.contact-info p {
+margin-bottom: 10px;
+}
+
+.contact-info ul {
+list-style-type: none;
+padding: 0;
+}
+
+.contact-info li {
+margin-bottom: 5px;
+}
+
+video {
+  width: 100%; /* Thiết lập chiều rộng của video là 100% của phần tử chứa nó */
+  max-width: 500px; /* Giới hạn chiều rộng tối đa của video là 500px */
+  height: auto; /* Đảm bảo tỷ lệ khung hình tự động được duy trì */
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .content-wrapper {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .content-image {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .content-text {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .item {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .profile-card {
+    width: 100%;
+    margin: 0 auto 20px auto;
+  }
+
+  .foot{
+    width: 100%;
+  }
+
+  .foot-detail {
+    display: none;
+  }
+
+  .foot-details{
+    display: block;
+  }
+
+  .donghanh span{
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .content-wrapper {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .content-image {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .content-text {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .item {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .profile-card {
+    width: calc(50% - 40px);
+    margin: 0 20px 20px 0;
+  }
+}
+</style>
+  
+</head>
+<body>
+  <div class="header1">
+    <h1>Thông Tin Về Dự Án</h1>
+  </div>
+
+  <div class="content">
+    <div class="content-wrapper">
+        <p class="content-text" data-aos="fade-right" data-aos-delay="300">SVP là nơi bạn có thể tìm thấy những bộ trang phục thời trang hàng đầu từ các thương hiệu uy tín trên thị trường.<br>
+            Chúng tôi cam kết mang đến cho khách hàng trải nghiệm mua sắm thú vị và thuận tiện.</p>
+        <video controls>
+          <source src="assets/videos/video.mp4" data-aos="fade-up" data-aos-delay="600" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+  </div>
+
+  <a href="index.html" class="button-view-products">Xem Sản Phẩm</a>
+
+  <div class="items-container">
+        <div class="item" onclick="toggleActive(this)">
+          <h2>Mục tiêu</h2>
+          <p>
+            Thiết kế một trải nghiệm mua sắm trực tuyến tốt nhất, với các chức năng như tìm kiếm nhanh chóng, xem chi tiết sản phẩm, thêm vào giỏ hàng và thanh toán dễ dàng.
+          </p>
+          <p>
+            Đảm bảo giao diện đáp ứng mọi thiết bị, từ máy tính đến điện thoại di động, để người dùng có trải nghiệm nhất quán trên mọi nền tảng.
+          </p>
+          <p>
+            Tạo ra các chức năng tương tác như đánh giá sản phẩm, chia sẻ trên mạng xã hội và khuyến mãi để tạo ra sự tương tác tích cực với người dùng.
+          </p>
+        </div>
+        
+        <div class="item" onclick="toggleActive(this)">
+            <h2>Phương pháp</h2>
+          <p>
+            Sử dụng các kỹ thuật thiết kế tương tác để tạo ra giao diện mượt mà và dễ sử dụng, bao gồm cả việc sắp xếp các yếu tố, tạo ra các nút và menu dễ nhìn nhận.
+          </p>
+          <p>
+            Sử dụng màu sắc và hình ảnh phù hợp để tạo ra một trải nghiệm hấp dẫn và chuyên nghiệp cho người dùng.
+          </p>
+          <p>
+            Tiến hành thử nghiệm và kiểm tra với người dùng thực tế để đảm bảo rằng giao diện hoạt động tốt nhất trước khi đưa vào sử dụng.
+          </p>
+        </div>
+        
+        <div class="item" onclick="toggleActive(this)">
+            <h2>Kết quả</h2>
+            <p>
+              Giao diện hấp dẫn và dễ sử dụng giúp tăng tỷ lệ hoàn thành quy trình mua hàng, từ đó tăng doanh số bán hàng.
+            </p>
+            <p>
+              Trải nghiệm tích cực và thuận tiện có thể tạo ra một ấn tượng tích cực về thương hiệu, từ đó tăng sự trung thành và tái mua từ phía khách hàng.
+            </p>
+            <p>
+              Giao diện tương tác và các tính năng chia sẻ giúp tăng hiệu quả truyền thông thương hiệu và tương tác với khách hàng trên mạng xã hội.
+            </p>
+        </div>
+    </div>
+
+    <div class="student-introduction">
+      <h2 data-aos="fade-up">Giới thiệu sinh viên</h2>
+    <div class="profile-card" data-aos="fade-right">
+      <div class="profile-container">
+        <div class="image">
+          <img src="assets/img/avatars/vu.jpg" alt="photo" class="profile-img" />
+        </div>
+      </div>
+
+      <div class="text-data">
+          <span class="name">Lê Hiền Vũ</span>
+          <span class="job">Thiết kế trang chủ và trang hiển thị giỏ hàng.</span>
+      </div>
+
+      <div class="media-buttons">
+        <a href="#" class="link">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#" style="background:#e1306c;" class="link"> 
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" style= "background: #4caf50;" class="link">
+          <i class="fab fa-google"></i>
+        </a>
+      </div>
+
+      <div class="buttons">
+          <button class="button">Theo dõi</button>
+          <button class="button">Nhắn tin</button>
+      </div>
+
+      <div class="analytics">
+          <div class="data">
+              <i class="bx bx-heart"></i>
+              <span class="number">60k</span>
+          </div>
+          <div class="data">
+              <i class="bx bx-message-rounded"></i>
+              <span class="number">20k</span>
+          </div>
+          <div class="data">
+              <i class="bx bx-share"></i>
+              <span class="number">12k</span>
+          </div>
+      </div>
+  </div>
+
+  <div class="profile-card" data-aos="fade-up">
+    <div class="profile-container">
+      <div class="image">
+          <img src="assets/img/avatars/sang.jpg" alt="photo" class="profile-img" />
+      </div>
+    </div>
+
+      <div class="text-data">
+          <span class="name">Phạm Thành Phước Sang</span>
+          <span class="job">Thiết kế trang liệt kê sản phẩm và chi tiết sản phẩm.</span>
+      </div>
+
+      <div class="media-buttons">
+          <a href="#" class="link">
+              <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" style="background: #e1306c;" class="link"> 
+              <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" style="background: #4caf50;" class="link">
+              <i class="fab fa-google"></i>
+          </a>
+      </div>
+
+      <div class="buttons">
+          <button class="button">Theo dõi</button>
+          <button class="button">Nhắn tin</button>
+      </div>
+
+      <div class="analytics">
+          <div class="data">
+              <i class="bx bx-heart"></i>
+              <span class="number">60k</span>
+          </div>
+          <div class="data">
+              <i class="bx bx-message-rounded"></i>
+              <span class="number">20k</span>
+          </div>
+          <div class="data">
+              <i class="bx bx-share"></i>
+              <span class="number">12k</span>
+          </div>
+        </div>
+    </div>
+    
+    
+    <div class="profile-card" data-aos="fade-left">
+      <div class="profile-container">
+        <div class="image">
+          <img src="assets/img/avatars/phat.jpg" alt="photo" class="profile-img" />
+        </div>
+      </div>
+
+      <div class="text-data">
+          <span class="name">Nguyễn Hồng Phát</span>
+          <span class="job">Thiết kế trang giới thiệu sinh viên, dự án và Form đăng ký.</span>
+      </div>
+
+      <div class="media-buttons">
+          <a href="#" class="link">
+              <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" style="background: #e1306c;" class="link"> 
+              <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" style="background: #4caf50;" class="link">
+              <i class="fab fa-google"></i>
+          </a>
+      </div>
+
+      <div class="buttons">
+          <button class="button">Theo dõi</button>
+          <button class="button">Nhắn tin</button>
+      </div>
+
+      <div class="analytics">
+          <div class="data">
+              <i class="bx bx-heart"></i>
+              <span class="number">60k</span>
+          </div>
+          <div class="data">
+              <i class="bx bx-message-rounded"></i>
+              <span class="number">20k</span>
+          </div>
+          <div class="data">
+              <i class="bx bx-share"></i>
+              <span class="number">12k</span>
+          </div>
+      </div>
+  </div>
+</div>
+ <!-- Footer -->
+ <div class="foot">
+  <div class="foot-detail">
+      <div class="foot1">
+          <div class="cach">
+              <span>MUA SẮM</span>
+          </div>
+          <ul>
+              <li>Giao hàng</li>
+              <li>Thanh toán</li>
+              <li>Trả hàng</li>
+              <li>Tìm cửa hàng</li>
+              <li>Magazine</li>
+          </ul>
+      </div>
+      <div class="foot2">
+          <div class="cach">
+              <span>THÔNG TIN DOANH NGHIỆP</span>
+          </div>
+
+          <ul>
+              <li>Cơ hội nghề nghiệp tại SVP</li>
+              <li>Giới thiệu về SVP Group</li>
+              <li>Thời trang bền vững - SVP Group</li>
+              <li>Báo chí</li>
+              <li>Quan hệ với nhà đầu tư</li>
+              <li>Quản trị Doanh nghiệp</li>
+          </ul>
+      </div>
+      <div class="foot3">
+          <div class="cach">
+              <span>TRỢ GIÚP</span>
+          </div>
+
+          <ul>
+              <li>Dịch vụ Khách hàng</li>
+              <li>Tài Khoản Của Tôi</li>
+              <li>Các điều khoản & điều kiện</li>
+              <li>Pháp lý & Bảo mật</li>
+              <li>Liên hệ</li>
+              <li>Chính sách bảo mật thông tin thanh toán của</li>
+
+          </ul>
+      </div>
+      <div class="foot-lienhe">
+          <div class="mangxh">
+              <div class="ins">
+                  <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="tik">
+                  <i class="fa-brands fa-tiktok"></i>
+              </div>
+              <div class="you">
+                  <i class="fa-brands fa-youtube"></i>
+              </div>
+              <div class="fb">
+                  <i class="fa-brands fa-facebook"></i>
+              </div>
+          </div>
+          <div class="phone-number">
+              <i class="fa-solid fa-phone"></i><span style="margin-left: 20px;">03744999990</span>
+          </div>
+          <div class="letter">
+              <i class="fa-solid fa-envelope"></i><span style="margin-left: 20px;">wecare@svp.vn</span>
+          </div>
+          <div class="bocongthuong">
+              <img src="./assets/img/index/bo-cong-thuong.png" alt="">
+          </div>
+      </div>
+
+  </div>
+  <div class="foot-details">
+      <!-- <div class="donghanh">
+              <span>“Đặt sự hài lòng của khách hàng là ưu tiên số 1 trong mọi suy nghĩ hành động của mình” là sứ mệnh, là triết lý, chiến lược.. luôn cùng SVP tiến bước</span>
+          </div> -->
+      <div class="foot1">
+          <div class="cach">
+              <span class="xuongg">MUA SẮM <i class="fa-solid fa-angle-down downnn"></i></span>
+          </div>
+          <ul class="hienra">
+              <li>Giao hàng</li>
+              <li>Thanh toán</li>
+              <li>Trả hàng</li>
+              <li>Tìm cửa hàng</li>
+              <li>Magazine</li>
+          </ul>
+      </div>
+      <div class="foot2">
+          <div class="cach">
+              <span class="xuongg1">THÔNG TIN DOANH NGHIỆP <i class="fa-solid fa-angle-down downnn1"></i></span>
+          </div>
+
+          <ul class="hienra1">
+              <li>Cơ hội nghề nghiệp tại SVP</li>
+              <li>Giới thiệu về SVP Group</li>
+              <li>Thời trang bền vững - SVP Group</li>
+              <li>Báo chí</li>
+              <li>Quan hệ với nhà đầu tư</li>
+              <li>Quản trị Doanh nghiệp</li>
+          </ul>
+      </div>
+      <div class="foot3">
+          <div class="cach">
+              <span class="xuongg2">TRỢ GIÚP <i class="fa-solid fa-angle-down downnn2"></i></span>
+          </div>
+
+          <ul class="hienra2">
+              <li>Dịch vụ Khách hàng</li>
+              <li>Tài Khoản Của Tôi</li>
+              <li>Các điều khoản & điều kiện</li>
+              <li>Pháp lý & Bảo mật</li>
+              <li>Liên hệ</li>
+              <li>Chính sách bảo mật thông tin thanh toán của</li>
+
+          </ul class="hienra">
+      </div>
+      <div class="foot-lienhe">
+          <div class="mangxh1">
+              <div class="ins">
+                  <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="tik">
+                  <i class="fa-brands fa-tiktok"></i>
+              </div>
+              <div class="you">
+                  <i class="fa-brands fa-youtube"></i>
+              </div>
+              <div class="fb">
+                  <i class="fa-brands fa-facebook"></i>
+              </div>
+          </div>
+          <div class="phone-number">
+              <i class="fa-solid fa-phone"></i><span style="margin-left: 20px;">03744999990</span>
+          </div>
+          <div class="letter">
+              <i class="fa-solid fa-envelope"></i><span style="margin-left: 20px;">wecare@svp.vn</span>
+          </div>
+          <div class="bocongthuong">
+              <img src="./assets/img/index/bo-cong-thuong.png" alt="">
+          </div>
+      </div>
+  </div>
+</div>
+     
+  <script src="assets/script/intro_form.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
